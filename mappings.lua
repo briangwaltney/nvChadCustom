@@ -17,10 +17,10 @@ M.general = {
       "goto prev buffer",
     },
 
-    ["<Esc>"] = { ":noh<CR>:w<CR>", "clear highlights and save" },
+    ["<Esc>"] = { ":noh<CR>", "clear highlights" },
+    ["<leader>s"] = { ":w<CR>", "save" },
 
     ["<leader>w"] = {
-
       function()
         require("nvchad_ui.tabufline").close_buffer()
       end,
@@ -28,7 +28,6 @@ M.general = {
     },
 
     ["{"] = { "<C-u>zz", "half page up" },
-
     ["}"] = { "<C-d>zz", "half page down" },
     ["U"] = { "<C-r>", "undo" },
     ["n"] = { "nzzzv", "find next and center" },
@@ -100,7 +99,6 @@ M.general = {
       "harpoon file 6",
     },
   },
-
   v = {
     ["gc"] = {
       "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>",
