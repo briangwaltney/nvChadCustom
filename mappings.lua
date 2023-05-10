@@ -10,6 +10,11 @@ M.disabled = {
 
 M.general = {
   n = {
+    ["<leader>dl"] = {
+      "<cmd> Telescope diagnostics <CR>",
+      "diagnostics list",
+    },
+
     ["<c-Y>"] = {
       function()
         require("nvchad_ui.tabufline").tabuflinePrev()
@@ -18,14 +23,7 @@ M.general = {
     },
 
     ["<Esc>"] = { ":noh<CR>", "clear highlights" },
-    ["<leader>s"] = { ":w<CR>", "save" },
-
-    ["<leader>w"] = {
-      function()
-        require("nvchad_ui.tabufline").close_buffer()
-      end,
-      "close buffer",
-    },
+    ["<leader>s"] = { ":lua vim.lsp.buf.format()<CR>:w<CR>", "save" },
 
     ["{"] = { "<C-u>zz", "half page up" },
     ["}"] = { "<C-d>zz", "half page down" },
@@ -91,12 +89,6 @@ M.general = {
         require("harpoon.ui").nav_file(5)
       end,
       "harpoon file 5",
-    },
-    ["<leader>6"] = {
-      function()
-        require("harpoon.ui").nav_file(6)
-      end,
-      "harpoon file 6",
     },
   },
   v = {

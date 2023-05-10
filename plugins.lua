@@ -4,6 +4,15 @@ local overrides = require "custom.configs.overrides"
 local plugins = {
 
   -- Override plugin definition options
+  {
+    "NvChad/nvim-colorizer.lua",
+    opts = {
+      user_default_options = {
+        tailwind = true,
+        mode = "background",
+      },
+    },
+  },
 
   {
     "neovim/nvim-lspconfig",
@@ -79,8 +88,8 @@ local plugins = {
     },
   },
   {
-    "ThePrimeagen/harpoon"
-  }
+    "ThePrimeagen/harpoon",
+  },
 }
 
 return plugins
