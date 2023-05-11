@@ -10,6 +10,9 @@ M.disabled = {
 
 M.general = {
   n = {
+    ["<leader>F"] = { "<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>", "find all" },
+    ["F"] = { "<cmd> HopWord<CR>", "HOP word" },
+
     ["<leader>dl"] = {
       "<cmd> Telescope diagnostics <CR>",
       "diagnostics list",

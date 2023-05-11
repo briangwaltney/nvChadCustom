@@ -2,6 +2,14 @@ local overrides = require "custom.configs.overrides"
 
 ---@type NvPluginSpec[]
 local plugins = {
+  {
+    "ggandor/lightspeed.nvim",
+    opts = {},
+    config = function()
+      require("lightspeed").setup {}
+    end,
+    lazy = false,
+  },
 
   -- Override plugin definition options
   {
@@ -77,6 +85,7 @@ local plugins = {
       },
     },
     opts = {
+      completion = { completeopt = "menu,menuone,noinsert,noselect" },
       sources = {
         { name = "copilot" },
         { name = "nvim_lsp" },
