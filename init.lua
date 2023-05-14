@@ -1,7 +1,4 @@
 vim.opt.scrolloff = 16
-vim.opt.relativenumber = true -- set relative numbered lines
--- Auto resize panes when resizing nvim window
--- autocmd("VimResized", {
---   pattern = "*",
---   command = "tabdo wincmd =",
--- })
+vim.opt.relativenumber = true
+vim.opt.spelllang = "en_us"
+vim.opt.spell = true

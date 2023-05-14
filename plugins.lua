@@ -18,6 +18,7 @@ local plugins = {
       user_default_options = {
         tailwind = true,
         mode = "background",
+        names = false,
       },
     },
   },
@@ -44,7 +45,18 @@ local plugins = {
     "williamboman/mason.nvim",
     opts = overrides.mason,
   },
-
+  {
+    "nvim-treesitter/nvim-treesitter-context",
+    lazy = false,
+  },
+  {
+    "nvim-treesitter/playground",
+    opts = {},
+    config = function()
+      print "playground"
+    end,
+    lazy = false,
+  },
   {
     "nvim-treesitter/nvim-treesitter",
     opts = overrides.treesitter,
@@ -55,7 +67,12 @@ local plugins = {
     opts = overrides.nvimtree,
   },
 
-  -- Install a plugin
+  {
+    "L3MON4D3/LuaSnip",
+    config = function()
+      require "custom.snippets"
+    end,
+  },
   {
     "max397574/better-escape.nvim",
     event = "InsertEnter",
@@ -87,8 +104,8 @@ local plugins = {
     opts = {
       completion = { completeopt = "menu,menuone,noinsert,noselect" },
       sources = {
-        { name = "copilot" },
         { name = "nvim_lsp" },
+        { name = "copilot" },
         { name = "luasnip" },
         { name = "buffer" },
         { name = "nvim_lua" },

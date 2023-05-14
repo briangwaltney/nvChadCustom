@@ -16,6 +16,9 @@ M.override = {
   },
 }
 
----@type HLTable
+M.add = {
+  -- baddd
+  ["@spell"] = { fg = "#FF0000" },
+}
 
 return M

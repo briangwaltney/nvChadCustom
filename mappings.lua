@@ -7,9 +7,10 @@ M.disabled = {
     ["<leader>n"] = { "" },
   },
 }
-
+-- test
 M.general = {
   n = {
+    ["<leader><leader>s"] = { "<cmd>source ~/.config/nvim/lua/custom/snippets.lua<CR>" },
     ["<leader>F"] = { "<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>", "find all" },
     ["F"] = { "<cmd> HopWord<CR>", "HOP word" },
 
