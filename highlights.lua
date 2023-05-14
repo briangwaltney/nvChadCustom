@@ -16,9 +16,4 @@ M.override = {
   },
 }
 
-M.add = {
-  -- baddd
-  ["@spell"] = { fg = "#FF0000" },
-}
-
 return M
