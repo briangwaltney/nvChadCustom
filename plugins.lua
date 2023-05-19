@@ -3,10 +3,10 @@ local overrides = require "custom.configs.overrides"
 ---@type NvPluginSpec[]
 local plugins = {
   {
-    "ggandor/lightspeed.nvim",
+    "phaazon/hop.nvim",
     opts = {},
     config = function()
-      require("lightspeed").setup {}
+      require("hop").setup {}
     end,
     lazy = false,
   },
@@ -50,14 +50,6 @@ local plugins = {
     lazy = false,
   },
   {
-    "nvim-treesitter/playground",
-    opts = {},
-    config = function()
-      print "playground"
-    end,
-    lazy = false,
-  },
-  {
     "nvim-treesitter/nvim-treesitter",
     opts = overrides.treesitter,
   },
@@ -81,35 +73,23 @@ local plugins = {
     end,
   },
   {
-    "zbirenbaum/copilot.lua",
-    cmd = "Copilot",
-    event = "InsertEnter",
-    config = function()
-      require("copilot").setup {
-        suggestion = { enabled = false },
-        panel = { enabled = false },
-      }
-    end,
+    "github/copilot.vim",
+    lazy = false,
   },
   {
     "hrsh7th/nvim-cmp",
-    dependencies = {
-      {
-        "zbirenbaum/copilot-cmp",
-        config = function()
-          require("copilot_cmp").setup()
-        end,
-      },
-    },
     opts = {
       completion = { completeopt = "menu,menuone,noinsert,noselect" },
       sources = {
         { name = "nvim_lsp" },
-        { name = "copilot" },
         { name = "luasnip" },
         { name = "buffer" },
         { name = "nvim_lua" },
         { name = "path" },
+      },
+      mapping = {
+        ["<Tab>"] = require("cmp").config.disable,
+        ["<S-Tab>"] = require("cmp").config.disable,
       },
     },
   },

@@ -5,14 +5,23 @@ M.disabled = {
   n = {
     -- Disable
     ["<leader>n"] = { "" },
+    ["<Tab>"] = { "" },
   },
 }
 -- test
 M.general = {
   n = {
+    ["<S-s>"] = {
+      "<cmd>HopWordBC<CR>",
+      "search word backward",
+    },
+    ["s"] = {
+
+      "<cmd>HopWordAC<CR>",
+      "search word forward",
+    },
     ["<leader><leader>s"] = { "<cmd>source ~/.config/nvim/lua/custom/snippets.lua<CR>" },
     ["<leader>F"] = { "<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>", "find all" },
-    ["F"] = { "<cmd> HopWord<CR>", "HOP word" },
 
     ["<leader>dl"] = {
       "<cmd> Telescope diagnostics <CR>",
@@ -57,6 +66,8 @@ M.general = {
 
     ["<leader>ch"] = { "<cmd> Telescope keymaps <CR>", "Keymap search" },
 
+    ["<leader>co"] = { "<cmd> Copilot open <CR>" },
+
     -- Harpoon
     ["<leader>9"] = {
       function()
@@ -87,6 +98,12 @@ M.general = {
         require("harpoon.ui").nav_file(3)
       end,
       "harpoon file 3",
+    },
+    ["<leader>4"] = {
+      function()
+        require("harpoon.ui").nav_file(4)
+      end,
+      "harpoon file 4",
     },
     ["<leader>5"] = {
       function()
@@ -139,7 +156,7 @@ M.general = {
           cmp.select_prev_item()
         end
       end,
-      "testing",
+      "Cycle autocomplete",
     },
   },
 }
