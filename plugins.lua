@@ -46,12 +46,24 @@ local plugins = {
     opts = overrides.mason,
   },
   {
-    "nvim-treesitter/nvim-treesitter-context",
+    "JoosepAlviste/nvim-ts-context-commentstring",
     lazy = false,
+  },
+  {
+    "numToStr/Comment.nvim",
+    config = function()
+      local comment = require "Comment"
+      comment.setup {
+        pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
+      }
+    end,
   },
   {
     "nvim-treesitter/nvim-treesitter",
     opts = overrides.treesitter,
+    dependencies = {
+      "JoosepAlviste/nvim-ts-context-commentstring",
+    },
   },
 
   {

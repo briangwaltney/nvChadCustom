@@ -34,7 +34,7 @@ M.ui = {
         -- white = "#abb2bf",
         -- darker_black = "#2a303c",
         -- black = "#2E3440", --  nvim bg
-        -- black2 = "#343a46",
+        black2 = "#494f5b",
         -- one_bg = "#373d49",
         -- one_bg2 = "#464c58",
         -- one_bg3 = "#494f5b",
@@ -65,8 +65,6 @@ M.ui = {
     },
   },
 }
-
-local test = {}
 
 M.plugins = "custom.plugins"
 

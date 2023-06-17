@@ -11,9 +11,14 @@ M.treesitter = {
     "tsx",
     "markdown",
     "markdown_inline",
+    "prisma",
   },
   indent = {
     enable = true,
+  },
+  context_commentstring = {
+    enable = true,
+    enable_autocmd = false,
   },
 }
 
@@ -42,6 +47,7 @@ M.mason = {
 M.nvimtree = {
   git = {
     enable = true,
+    ignore = false,
   },
   view = {
     width = 35,
@@ -53,6 +59,9 @@ M.nvimtree = {
         git = true,
       },
     },
+  },
+  diagnostics = {
+    enable = true,
   },
 }
 

@@ -11,6 +11,13 @@ M.disabled = {
 -- test
 M.general = {
   n = {
+
+    ["<C-q>"] = {
+      function(bufnr)
+        require("telescope.actions").smart_send_to_qflist(bufnr)
+        require("telescope.builtin").quickfix()
+      end,
+    },
     ["<S-s>"] = {
       "<cmd>HopWordBC<CR>",
       "search word backward",
