@@ -18,15 +18,6 @@ M.general = {
         require("telescope.builtin").quickfix()
       end,
     },
-    ["<S-s>"] = {
-      "<cmd>HopWordBC<CR>",
-      "search word backward",
-    },
-    ["s"] = {
-
-      "<cmd>HopWordAC<CR>",
-      "search word forward",
-    },
     ["<leader><leader>s"] = { "<cmd>source ~/.config/nvim/lua/custom/snippets.lua<CR>" },
     ["<leader>F"] = { "<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>", "find all" },
 

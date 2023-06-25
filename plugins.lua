@@ -2,11 +2,18 @@ local overrides = require "custom.configs.overrides"
 
 ---@type NvPluginSpec[]
 local plugins = {
+  -- {
+  --   "phaazon/hop.nvim",
+  --   opts = {},
+  --   config = function()
+  --     require("hop").setup {}
+  --   end,
+  --   lazy = false,
+  -- },
   {
-    "phaazon/hop.nvim",
-    opts = {},
+    "ggandor/leap.nvim",
     config = function()
-      require("hop").setup {}
+      require("leap").add_default_mappings()
     end,
     lazy = false,
   },
@@ -102,6 +109,10 @@ local plugins = {
       mapping = {
         ["<Tab>"] = require("cmp").config.disable,
         ["<S-Tab>"] = require("cmp").config.disable,
+        ["<CR>"] = require("cmp").mapping.confirm {
+          behavior = require("cmp").ConfirmBehavior.Insert,
+          select = false,
+        },
       },
     },
   },

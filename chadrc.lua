@@ -7,6 +7,9 @@ local highlights = require "custom.highlights"
 M.ui = {
   theme = "nord",
   theme_toggle = { "nord", "one_light" },
+  statusline = {
+    theme = "vscode_colored",
+  },
 
   hl_override = highlights.override,
   hl_add = highlights.add,
